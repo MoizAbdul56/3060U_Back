@@ -1,12 +1,21 @@
 import util.Reader;
-//import process.*;
+import java.util.*;
+import user.User;
+//import process.ProcessAccount;
 
 class main{
     public static void main(String[] args) {
-        Reader r = new Reader("transactions.txt");
-        for (String transaction:r.data){
-            process(transaction);
-        }
+        // Reader r = new Reader("transactions.txt");
+        // for (String transaction:r.data){
+        //     process(transaction);
+        //  }
+        
+        // Reader r = new Reader();
+        // r.readUser("userAccounts.txt");
+        // for (Map.Entry<String,User> entry : r.users.entrySet())
+        // System.out.println("Key = " + entry.getKey() +
+        //              ", Value = " + entry.getValue().credit);
+
     }
 
     static void process(String transaction){
