@@ -19,10 +19,28 @@ public class Writer{
     }
 
     void writerUsers(){
-
+        try{
+            BufferedWriter writer = new BufferedWriter(new FileWriter("NewUserAccounts.txt"));
+            for (Map.Entry<String,User> entry : users.entrySet()){
+                writer.write(entry.getValue().toString());
+            }
+            writer.write("END");
+            writer.close();
+        } catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
     void writerItems(){
-
+        try{
+            BufferedWriter writer = new BufferedWriter(new FileWriter("NewItems.txt"));
+            for (Item transaction:items){
+                writer.write(transaction.toString());
+             }
+            writer.write("END");
+            writer.close();
+        } catch(IOException e){
+            e.printStackTrace();
+        }
     }
 }

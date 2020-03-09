@@ -19,16 +19,15 @@ class main{
         //              ", Value = " + entry.getValue().credit);
            //return hashmap of user
 
-           // Reader r = new Reader();
-           // r.readUser("userAccounts.txt");
-           // for (Map.Entry<String,User> entry : r.users.entrySet())
-           // System.out.println("Key = " + entry.getKey() +
-           //              ", Value = " + entry.getValue().credit);
+       // Reader r = new Reader();
+       // r.readUser("userAccounts.txt");
+       // for (Map.Entry<String,User> entry : r.users.entrySet())
+       // System.out.println(entry.getValue().toString());
 
         // Reader r = new Reader();
         // r.readItem("items.txt");
         // for (Item transaction:r.items){
-        //     System.out.println(transaction.current_bid);
+        //     System.out.println(transaction.toString());
         //  } //return list<item>
     }
 

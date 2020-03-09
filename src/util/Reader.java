@@ -39,6 +39,7 @@ public class Reader{
                     break;
                 }
                 String username = line.substring(0,15);
+                username = username.replaceAll("\\s", "");
                 String user_type = line.substring(16,18);
                 Double credit = new Double(line.substring(19,28));
                 User user = new User(username,user_type,credit);
@@ -61,9 +62,12 @@ public class Reader{
                     break;
                 }
                 String item_name = line.substring(0,19);
+                item_name = item_name.replaceAll("\\s", "");
                 String seller = line.substring(20,35);
+                seller = seller.replaceAll("\\s", "");
                 String buyer = line.substring(36,51);
-                int auction_day = 1;// Integer.parseInt(line.substring(52,55));
+                buyer = buyer.replaceAll("\\s", "");
+                int auction_day = Integer.parseInt(line.substring(52,55));
                 Double current_bid = new Double(line.substring(56,62));
                 Item item = new Item(item_name,seller,buyer,auction_day,current_bid);
                 this.items.add(item);

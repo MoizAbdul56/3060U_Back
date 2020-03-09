@@ -1,9 +1,13 @@
 package user;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
 public class User{
     public String username;
     public String user_type;
     public double credit;
+    private DecimalFormat df2 = new DecimalFormat("000000.00");
 
     public User(String username, String user_type, double credit){
         this.username = username;
@@ -13,11 +17,10 @@ public class User{
 
     //toString function that prints the User info as the format of username_____AA_credit
     public String toString(){
-        StringBuilder output = new StringBuilder();
-        output.append("                            ");
-        output.replace(0,this.username.length(),this.username);
-        output.replace(16,18, this.user_type);
-        output.replace(19,28,String.valueOf(this.credit));
+        StringBuilder output = new StringBuilder("");
+        String padded_username = String.format("%1$-15s", username);
+        String padded_credit = String.format("%1$9s", df2.format(this.credit));
+        output.append(padded_username + " " + this.user_type + " " + padded_credit);
 
         return output.toString();
     }

@@ -1,11 +1,16 @@
 package item;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
 public class Item{
     public String item_name;
     public String seller;
     public String buyer;
     public int auction_day;
     public double current_bid;
+    private DecimalFormat df1 = new DecimalFormat("000");
+    private DecimalFormat df2 = new DecimalFormat("000.00");
 
     public Item(String item_name,String seller,String buyer,int auction_day,double current_bid){
         this.item_name = item_name;
@@ -15,4 +20,16 @@ public class Item{
         this.current_bid = current_bid;
     }
 
+    public String toString(){
+        String padded_item_name = String.format("%1$-19s", item_name);
+        String padded_seller = String.format("%1$-15s", seller);
+        String padded_buyer = String.format("%1$-15s", buyer);
+        String padded_day = String.format("%1$3s", df1.format(auction_day));
+        String padded_bid = String.format("%1$6s", df2.format(current_bid));
+
+        StringBuilder output = new StringBuilder("");
+        output.append(padded_item_name + " " + padded_seller + " " + padded_buyer + " " + padded_day + " " + padded_bid);
+
+        return output.toString();
+    }
 }
