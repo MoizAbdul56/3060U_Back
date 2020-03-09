@@ -1,21 +1,35 @@
 import util.Reader;
+import util.Writer;
 import java.util.*;
 import user.User;
+import item.Item;
 //import process.ProcessAccount;
 
 class main{
     public static void main(String[] args) {
-        // Reader r = new Reader("transactions.txt");
-        // for (String transaction:r.data){
-        //     process(transaction);
-        //  }
-        
+        Reader r = new Reader("transactions.txt");
+        for (String transaction:r.data){
+            process(transaction);
+         }
+
         // Reader r = new Reader();
         // r.readUser("userAccounts.txt");
         // for (Map.Entry<String,User> entry : r.users.entrySet())
         // System.out.println("Key = " + entry.getKey() +
         //              ", Value = " + entry.getValue().credit);
+           //return hashmap of user
 
+           // Reader r = new Reader();
+           // r.readUser("userAccounts.txt");
+           // for (Map.Entry<String,User> entry : r.users.entrySet())
+           // System.out.println("Key = " + entry.getKey() +
+           //              ", Value = " + entry.getValue().credit);
+
+        // Reader r = new Reader();
+        // r.readItem("items.txt");
+        // for (Item transaction:r.items){
+        //     System.out.println(transaction.current_bid);
+        //  } //return list<item>
     }
 
     static void process(String transaction){

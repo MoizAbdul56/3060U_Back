@@ -12,4 +12,13 @@ public class User{
     }
 
     //toString function that prints the User info as the format of username_____AA_credit
+    public String toString(){
+        StringBuilder output = new StringBuilder();
+        output.append("                            ");
+        output.replace(0,this.username.length(),this.username);
+        output.replace(16,18, this.user_type);
+        output.replace(19,28,String.valueOf(this.credit));
+
+        return output.toString();
+    }
 }
