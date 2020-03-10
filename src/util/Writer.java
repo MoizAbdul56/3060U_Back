@@ -11,18 +11,18 @@ public class Writer{
     public Map<String, User> users = new HashMap<>();
     public List<Item> items = new ArrayList<>();
 
-    Writer(Map<String, User> users){
+    public Writer(Map<String, User> users){
         this.users = users;
     }
-    Writer(List<Item> items){
+    public Writer(List<Item> items){
         this.items = items;
     }
 
-    void writerUsers(){
+    public void writerUsers(){
         try{
             BufferedWriter writer = new BufferedWriter(new FileWriter("NewUserAccounts.txt"));
             for (Map.Entry<String,User> entry : users.entrySet()){
-                writer.write(entry.getValue().toString());
+                writer.write(entry.getValue().toString()+"\n");
             }
             writer.write("END");
             writer.close();
@@ -31,7 +31,7 @@ public class Writer{
         }
     }
 
-    void writerItems(){
+    public void writerItems(){
         try{
             BufferedWriter writer = new BufferedWriter(new FileWriter("NewItems.txt"));
             for (Item transaction:items){

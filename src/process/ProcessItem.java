@@ -1,12 +1,21 @@
 package process;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import util.*;
 import java.util.*;
+import item.Item;
 
-class ProcessItem{
+public class ProcessItem{
+    public List<Item> items = new ArrayList<>();
 
+    public ProcessItem(List<Item> items){
+        this.items = items;
+    }
+
+    public void advertise(String transaction){
+        
+    }
+
+    public void vid(String transaction){
+
+    }
 }

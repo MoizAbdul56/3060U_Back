@@ -9,6 +9,8 @@ public class User{
     public double credit;
     private DecimalFormat df2 = new DecimalFormat("000000.00");
 
+    public User(){}
+
     public User(String username, String user_type, double credit){
         this.username = username;
         this.user_type = user_type;
