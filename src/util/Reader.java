@@ -4,13 +4,14 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
+import javafx.util.Pair;
 import user.User;
 import item.Item;
 
 public class Reader{
     public List<String> data = new ArrayList<>();
     public Map<String, User> users = new HashMap<>();
-    public List<Item> items = new ArrayList<>();
+    public Map<Pair<String,String>, Item> items = new HashMap<>();
 
     public Reader(){}
     //read general data
@@ -70,7 +71,8 @@ public class Reader{
                 int auction_day = Integer.parseInt(line.substring(52,55));
                 Double current_bid = new Double(line.substring(56,62));
                 Item item = new Item(item_name,seller,buyer,auction_day,current_bid);
-                this.items.add(item);
+                Pair<String, String> key = new Pair<>(item_name, seller);
+                items.put(key, item);
                 line = reader.readLine();
             }
             reader.close();

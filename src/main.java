@@ -16,33 +16,19 @@ class main{
         ProcessItem pi = new ProcessItem(r.items);
 
         for (String transaction:r.data){
-            process(transaction, pa, pi);
+            if(process(transaction, pa, pi) == 0){
+                break;
+            }
          }
 
          Writer w = new Writer(pa.users);
+         w.getItem(pi.items);
+
          w.writerUsers();
-
-
-        // Reader r = new Reader();
-        // r.readUser("userAccounts.txt");
-        // for (Map.Entry<String,User> entry : r.users.entrySet())
-        // System.out.println("Key = " + entry.getKey() +
-        //              ", Value = " + entry.getValue().credit);
-           //return hashmap of user
-
-       // Reader r = new Reader();
-       // r.readUser("userAccounts.txt");
-       // for (Map.Entry<String,User> entry : r.users.entrySet())
-       // System.out.println(entry.getValue().toString());
-
-        // Reader r = new Reader();
-        // r.readItem("items.txt");
-        // for (Item transaction:r.items){
-        //     System.out.println(transaction.toString());
-        //  } //return list<item>
+         w.writerItems();
     }
 
-    static void process(String transaction, ProcessAccount pa, ProcessItem pi){
+    static int process(String transaction, ProcessAccount pa, ProcessItem pi){
         String substr = transaction.substring(0,2);
         int index = 0;
         String[] transactions = {"01","02","03","04","05","06","00"};
@@ -56,57 +42,36 @@ class main{
 
         switch(index){
             case 1:
-                System.out.println("create");
-                //
-                //add to Account file
-                //
                 pa.addAccount(transaction);
                 break;
 
             case 2:
-                System.out.println("delete");
-                //
-                //delete from Account file function here
-                //
                 pa.deleteAccount(transaction);
                 break;
 
             case 3:
-                System.out.println("advertise");
-                //
-                //advertise function here
-                //
+                pi.advertise(transaction);
                 break;
 
             case 4:
-                System.out.println("bid");
-                //
-                //bid  function here
-                //
+                pi.bid(transaction);
                 break;
 
             case 5:
-                System.out.println("refund");
-                //
-                //refund function here
-                //
                 pa.refund(transaction);
                 break;
 
             case 6:
-                System.out.println("addcredit");
-                //
-                //addcredit function here
-                //
                 pa.addCredit(transaction);
                 break;
 
             case 7:
-                System.out.println("end");
-                break;
+                return 0;
 
             default:
                 System.out.println("error");
+                return -1;
         }
+        return 1;
     }
 }
