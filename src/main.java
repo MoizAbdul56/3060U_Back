@@ -1,3 +1,7 @@
+// Description: This is the main class that manages and coordinates how all the classes are run
+// Contains function that processes the data from daily transaction file and classify them with transaction number
+// Inputs: the transaction number and objects that processes accounts and items
+
 import util.Reader;
 import util.Writer;
 import java.util.*;
@@ -5,7 +9,6 @@ import user.User;
 import item.Item;
 import process.ProcessAccount;
 import process.ProcessItem;
-
 
 class main{
     public static void main(String[] args) {

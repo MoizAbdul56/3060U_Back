@@ -1,3 +1,7 @@
+// Description: This class processes changes to an account
+// Contains functions that saves the addition of an account, deletion of an account, adding credit and refunding credit
+// Inputs: user data which includes users username, the users type and the amount of credit the user has
+
 package process;
 
 import util.*;

@@ -1,3 +1,7 @@
+// Description: This class reads the attributes of users and items from a file
+// Contains functions that read general data, read user data and read item data
+// Inputs: general data, user data, item data and the file being read
+
 package util;
 
 import java.io.BufferedReader;

@@ -1,3 +1,7 @@
+// Description: This class writes the attributes of users and items to a file
+// Contains functions that get user data, get item data, write user data and write item data
+// Inputs: user data, item data and the file being written to
+
 package util;
 
 import java.io.BufferedWriter;
@@ -23,6 +27,7 @@ public class Writer{
         this.items = items;
     }
 
+    // writes users to file
     public void writerUsers(){
         try{
             BufferedWriter writer = new BufferedWriter(new FileWriter("NewUserAccounts.txt"));
@@ -36,6 +41,7 @@ public class Writer{
         }
     }
 
+    // writes items to file
     public void writerItems(){
         try{
             BufferedWriter writer = new BufferedWriter(new FileWriter("NewItems.txt"));

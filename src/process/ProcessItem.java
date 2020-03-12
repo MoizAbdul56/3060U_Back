@@ -1,3 +1,7 @@
+// Description: This class processes changes to an item
+// Contains functions that saves the advertisement for an item and bids on an item
+// Inputs: item data which includes the item's name, the seller of the item, the buyer of the item, the item's price, the day the item is put up for auction, the item's current bid
+
 package process;
 
 import util.*;

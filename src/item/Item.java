@@ -1,3 +1,7 @@
+// Description: This class represents the items that are being sold and bought within the system
+// Contains a function that constructs the item object and a function that converts all of the items attributes into a string
+// Inputs: the item's name, the seller of the item, the buyer of the item, the item's price, the day the item is put up for auction, the item's current bid
+
 package item;
 
 import java.math.RoundingMode;
@@ -12,6 +16,7 @@ public class Item{
     private DecimalFormat df1 = new DecimalFormat("000");
     private DecimalFormat df2 = new DecimalFormat("000.00");
 
+    // Item constructor
     public Item(String item_name,String seller,String buyer,int auction_day,double current_bid){
         this.item_name = item_name;
         this.seller = seller;
@@ -20,6 +25,7 @@ public class Item{
         this.current_bid = current_bid;
     }
 
+    // Converts the item attributes to string variables
     public String toString(){
         String padded_item_name = String.format("%1$-19s", item_name);
         String padded_seller = String.format("%1$-15s", seller);
