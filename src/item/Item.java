@@ -4,8 +4,9 @@
 
 package item;
 
-import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 public class Item{
     public String item_name;
@@ -37,5 +38,11 @@ public class Item{
         output.append(padded_item_name + " " + padded_seller + " " + padded_buyer + " " + padded_day + " " + padded_bid);
 
         return output.toString();
+    }
+
+    @Test
+    public void testToString() {
+        Item i = new Item("ball", "Alfonso", "Shawn", 1, 13);
+        assertEquals("ball Alfanso Shawn 1 13", i.toString());
     }
 }
