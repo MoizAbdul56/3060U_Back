@@ -3,10 +3,8 @@
 // Inputs: the item's name, the seller of the item, the buyer of the item, the item's price, the day the item is put up for auction, the item's current bid
 
 package item;
-
 import java.text.DecimalFormat;
-import static org.junit.Assert.assertEquals;
-import org.junit.Test;
+
 
 public class Item{
     public String item_name;
@@ -40,9 +38,5 @@ public class Item{
         return output.toString();
     }
 
-    @Test
-    public void testToString() {
-        Item i = new Item("ball", "Alfonso", "Shawn", 1, 13);
-        assertEquals("ball Alfanso Shawn 1 13", i.toString());
-    }
+
 }

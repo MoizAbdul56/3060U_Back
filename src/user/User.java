@@ -7,9 +7,6 @@ package user;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
-import static org.junit.Assert.assertEquals;
-import org.junit.Test;
-
 public class User{
     public String username;
     public String user_type;
@@ -33,11 +30,5 @@ public class User{
         output.append(padded_username + " " + this.user_type + " " + padded_credit);
 
         return output.toString();
-    }
-
-    @Test
-    public void testToString() {
-        User u = new User("Ben101", "admin", 20.00);
-        assertEquals("Ben101 admin 20.00", u.toString());
     }
 }

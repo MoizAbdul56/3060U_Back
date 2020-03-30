@@ -16,7 +16,7 @@ public class ProcessItem{
         this.items = items;
     }
 
-    public void advertise(String transaction){
+    public Map<Pair<String, String>, Item> advertise(String transaction){
         String item_name = transaction.substring(3,22);
         String seller_name = transaction.substring(23,38);
         seller_name = seller_name.replaceAll("\\s", "");
@@ -27,9 +27,11 @@ public class ProcessItem{
         Pair<String, String> key = new Pair<>(item_name, seller_name);
         Item item = new Item(item_name, seller_name, buyer_name, auction_day, current_bid);
         items.put(key, item);
+
+        return items;
     }
 
-    public void bid(String transaction){
+    public Map<Pair<String, String>, Item> bid(String transaction){
         String item_name = transaction.substring(3,22);
         item_name = item_name.replaceAll("\\s", "");
         String seller_name = transaction.substring(23,38);
@@ -43,6 +45,6 @@ public class ProcessItem{
         items.get(key).buyer = buyer_name;
         items.get(key).current_bid = current_bid;
 
-
+        return items;
     }
 }

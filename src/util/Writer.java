@@ -28,30 +28,38 @@ public class Writer{
     }
 
     // writes users to file
-    public void writerUsers(){
+    public String writerUsers(){
+        String userTestString = ""; // For testing puposes
+
         try{
             BufferedWriter writer = new BufferedWriter(new FileWriter("NewUserAccounts.txt"));
             for (Map.Entry<String,User> entry : users.entrySet()){
                 writer.write(entry.getValue().toString()+"\n");
+                userTestString = userTestString + entry.getValue().toString();
             }
             writer.write("END");
             writer.close();
         } catch(IOException e){
             e.printStackTrace();
         }
+        return userTestString;
     }
 
     // writes items to file
-    public void writerItems(){
+    public String writerItems(){
+        String itemTestString = ""; // For testing puposes
+
         try{
             BufferedWriter writer = new BufferedWriter(new FileWriter("NewItems.txt"));
              for (Map.Entry<Pair<String,String>,Item> entry : items.entrySet()){
                  writer.write(entry.getValue().toString()+"\n");
+                 itemTestString = itemTestString + entry.getValue().toString();
              }
             writer.write("END");
             writer.close();
         } catch(IOException e){
             e.printStackTrace();
         }
+        return itemTestString;
     }
 }
