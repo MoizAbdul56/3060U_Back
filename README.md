@@ -7,8 +7,8 @@
 ### How to run on Windows cmd
 Go into the src directory then enter the following:
 ```bash
-> javac --module-path %PATH_TO_FX% --add-modules javafx.controls main.java
-> java --module-path %PATH_TO_FX% --add-modules javafx.controls main.java
+> javac --module-path %PATH_TO_FX% --add-modules javafx.controls -cp .;C:path\to\lib\junit-4.13.jar main.java
+> java --module-path %PATH_TO_FX% --add-modules javafx.controls -cp .;C:path\to\lib\junit-4.13.jar main.java
 ```
 Note that %PATH_TO_FX% is an environment variable that points to the lib directory in your JavaFX SDK. For example mine is:
 ```
