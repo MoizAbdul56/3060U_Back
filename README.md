@@ -16,4 +16,4 @@ Note that %PATH_TO_FX% is an environment variable that points to the lib directo
 ```
 If you don't want to create an environment variable you can replace it with your directory that takes you to lib instead.
 
-We used Visual Studio Code for JUnit Testing
+We used Visual Studio Code for JUnit Testing. For the Reader testing Intellij was used.
