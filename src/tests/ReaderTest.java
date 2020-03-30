@@ -1,6 +1,6 @@
 package tests;
 
-import util;
+import util.*;
 import org.junit.Test;
 import org.junit.runner.Result;
 import process.ProcessAccount;

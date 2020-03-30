@@ -20,12 +20,12 @@ public class ProcessItemTest{
 
 
         Pair<String, String> p = new Pair<>("flower             ", "Elijah");
-        Item i = new Item("flower", "Elijah", "", 2, 50);
+        Item i = new Item("flower", "Elijah", "", 2, 50.00);
         Map<Pair<String, String>, Item> itemsMatch = new HashMap<>();
         itemsMatch.put(p, i);
         String transaction = "03 flower              Elijah          002 050.00"; 
         
-        assertEquals(itemsMatch, pi.advertise(transaction));
+        assertEquals(itemsMatch.toString(), pi.advertise(transaction).toString());
     }
 
     @Test
@@ -38,8 +38,8 @@ public class ProcessItemTest{
         Item i = new Item("flower", "Elijah", "Shawn", 2, 50);
         Map<Pair<String, String>, Item> itemsMatch = new HashMap<>();
         itemsMatch.put(p, i);
-        String transaction = "03 flower              Elijah          buyer          002 050.00"; 
+        String transaction = "03 flower              Elijah          Shawn           050.00"; 
         
-        assertEquals(itemsMatch, pi.bid(transaction));
+        assertEquals(itemsMatch.toString(), pi.bid(transaction).toString());
     }
 }
