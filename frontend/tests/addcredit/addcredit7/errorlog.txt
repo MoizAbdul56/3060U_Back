@@ -1,0 +1,2 @@
+delete [OK] available items file from expect output
+add if statement to check if the input for amount is not a number

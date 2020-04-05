@@ -1,0 +1,17 @@
+Welcome to CBay Auctioning System!
+Please enter a transaction:
+Please enter your username:
+Logged in.
+
+Welcome buyer
+Please enter a transaction:
+Please enter the item name:
+Please enter the seller's username:
+Current highest bid for guitar: $300
+Please enter a new bid amount:
+Error: Bid must be at least 5% higher than current highest bid
+
+Please enter a transaction:
+You have logged out
+
+Please enter a transaction:

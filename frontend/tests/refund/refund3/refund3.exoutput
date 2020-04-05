@@ -1,0 +1,16 @@
+Welcome to CBay Auctioning System!
+Please enter a transaction:
+Please enter your username:
+Logged in.
+
+Welcome admin
+Please enter a transaction:
+Please enter the buyer's username:
+Please enter the seller's username:
+Please enter the amount to refund:
+Error: Amount to refund must be greater than zero
+
+Please enter a transaction:
+You have logged out
+
+Please enter a transaction:
