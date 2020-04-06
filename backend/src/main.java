@@ -9,9 +9,9 @@ import process.ProcessItem;
 
 class main{
     public static void main(String[] args) {
-        Reader r = new Reader("../../frontend/src/mergedTransactions.txt");
-        r.readUser("../../frontend/src/userAccounts.txt");
-        r.readItem("../../frontend/src/items.txt");
+        Reader r = new Reader("../../mergedTransactions.txt");
+        r.readUser("../../userAccounts.txt");
+        r.readItem("../../items.txt");
         ProcessAccount pa = new ProcessAccount(r.users);
         ProcessItem pi = new ProcessItem(r.items);
 

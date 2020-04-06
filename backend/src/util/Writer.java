@@ -32,7 +32,7 @@ public class Writer{
         String userTestString = ""; // For testing puposes
 
         try{
-            BufferedWriter writer = new BufferedWriter(new FileWriter("NewUserAccounts.txt"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("../../userAccounts.txt"));
             for (Map.Entry<String,User> entry : users.entrySet()){
                 writer.write(entry.getValue().toString()+"\n");
                 userTestString = userTestString + entry.getValue().toString();
@@ -50,7 +50,7 @@ public class Writer{
         String itemTestString = ""; // For testing puposes
 
         try{
-            BufferedWriter writer = new BufferedWriter(new FileWriter("NewItems.txt"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("../../items.txt"));
              for (Map.Entry<Pair<String,String>,Item> entry : items.entrySet()){
                  writer.write(entry.getValue().toString()+"\n");
                  itemTestString = itemTestString + entry.getValue().toString();

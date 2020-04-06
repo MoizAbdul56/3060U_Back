@@ -4,4 +4,5 @@
 05 user            admin           000100.00
 03 flower              seller          002 050.00
 04 guitar              seller          buyer           351.00
+04 guitar              seller          buyer           351.00
 00                    000000000
