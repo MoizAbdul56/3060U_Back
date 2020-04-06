@@ -16,9 +16,7 @@ class main{
         ProcessItem pi = new ProcessItem(r.items);
 
         for (String transaction:r.data){
-            if(process(transaction, pa, pi) == 0){
-                break;
-            }
+            process(transaction, pa, pi);
          }
 
          Writer w = new Writer(pa.users);
@@ -32,6 +30,8 @@ class main{
         String substr = transaction.substring(0,2);
         int index = 0;
         String[] transactions = {"01","02","03","04","05","06","00"};
+
+        System.out.println(transaction);
 
         for(int i = 0; i < 7; i++){
             index += 1;
@@ -66,7 +66,7 @@ class main{
                 break;
 
             case 7:
-                return 0;
+                break;
 
             default:
                 System.out.println("error");

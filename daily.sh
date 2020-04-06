@@ -7,9 +7,11 @@ make
 
 ./main ../../userAccounts.txt ../../items.txt ../../transactions1.txt << EOF
 login
-buyer
-addcredit
-102
+admin
+create
+goodusername
+AA
+999999
 logout
 exit
 EOF

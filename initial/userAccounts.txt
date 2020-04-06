@@ -2,5 +2,5 @@ seller          SS 000000.00
 oldbuyer        AA 000000.00
 admin           AA 999999.00
 user            FS 000000.00
-buyer           BS 002000.00
+buyer           BS 006622.00
 END

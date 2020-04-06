@@ -1,6 +1,5 @@
-06 buyer              000102.00
+01 goodusername    AA 999999.00
 00                    000000000
-04 guitar              seller          user            400.00
 00                    000000000
 03 hat                 seller          003 020.00
 00                    000000000
