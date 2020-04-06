@@ -1,6 +1,8 @@
 #!/bin/sh
 cd frontend/src
 
+rm transactions1.txt transactions2.txt transactions3.txt
+
 make
 
 ./main userAccounts.txt items.txt transactions1.txt << EOF
@@ -34,7 +36,7 @@ logout
 exit
 EOF
 
-cat transactions1.txt transactions2.txt transactions3.txt > mergedTransactions.txt
+#cat transactions1.txt transactions2.txt transactions3.txt > mergedTransactions.txt
 
 cd ../../backend/src
 

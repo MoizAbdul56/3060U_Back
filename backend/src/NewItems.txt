@@ -1,3 +1,2 @@
-flower              seller                          002 050.00
-guitar              seller          buyer           007 351.00
+guitar              seller          oldbuyer        007 300.00
 END
