@@ -6,7 +6,7 @@
 - Linux Terminal
 
 ## How to run
-Go to the root directory and enter the following to run the weekly bash script:
+Stay in the root directory and enter the following to run the weekly bash script:
 ```bash
 ./weekly.sh
 ```
