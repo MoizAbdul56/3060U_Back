@@ -1,5 +1,6 @@
+seller          SS 000000.00
 admin           AA 999999.00
 goodusername    AA 999999.00
-user            FS 000200.00
+user            FS 000100.00
 buyer           BS 002000.00
 END

@@ -3,16 +3,12 @@ Please enter a transaction:
 Please enter your username:
 Logged in.
 
-Welcome admin
+Welcome superseller
 Please enter a transaction:
-Please enter the buyer's username:
-Error: Username does not exist
-
-Please enter a transaction:
-Transaction Error
-
-Please enter a transaction:
-Transaction Error
+Please enter the item to advertise:
+Please enter the minimum bid for the item:
+Please enter the number of days until the auction end:
+item advertised!
 
 Please enter a transaction:
 You have logged out

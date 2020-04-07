@@ -3,12 +3,13 @@ Please enter a transaction:
 Please enter your username:
 Logged in.
 
-Welcome admin
+Welcome user
 Please enter a transaction:
-Please enter the username to delete:
-Account delete successful!
+Please enter the item name:
+Please enter the seller's username:
+Error: Item not found
 
 Please enter a transaction:
-You have logged out
+Transaction Error
 
 Please enter a transaction:

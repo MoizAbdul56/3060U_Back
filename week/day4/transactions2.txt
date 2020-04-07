@@ -1,2 +1,2 @@
-01 seller          AA 999999.00
+01 superseller     SS 993421.00
 00                    000000000
