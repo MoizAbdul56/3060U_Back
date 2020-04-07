@@ -1,0 +1,4 @@
+admin           AA 999999.00
+user            FS 000300.00
+buyer           BS 002000.00
+END

@@ -1,4 +1,4 @@
 seller          AA 999999.00
 admin           AA 999999.00
-buyer           AA 999999.00
+user            FS 000400.00
 END

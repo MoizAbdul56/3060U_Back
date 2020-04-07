@@ -31,8 +31,6 @@ class main{
         int index = 0;
         String[] transactions = {"01","02","03","04","05","06","00"};
 
-        System.out.println(transaction);
-
         for(int i = 0; i < 7; i++){
             index += 1;
             if(substr.equals(transactions[i])){

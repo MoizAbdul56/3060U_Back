@@ -1,48 +1,37 @@
 #!/bin/sh
-cd frontend/src
 
-rm ../../transactions1.txt ../../transactions2.txt ../../transactions3.txt
+# Empty the transaction files
+:> week/$1/transactions1.txt 
+:> week/$1/transactions2.txt 
+:> week/$1/transactions3.txt
+
+# Run three frontend sessions and use different inputs for each of them
+cd frontend/src
 
 make
 
-./main ../../userAccounts.txt ../../items.txt ../../transactions1.txt << EOF
-login
-admin
-create
-goodusername
-AA
-999999
-logout
-exit
-EOF
+# If its the third day then ask for user input
 
-./main ../../userAccounts.txt ../../items.txt ../../transactions2.txt << EOF
-login
-user
-bid
-guitar
-seller
-400
-logout
-exit
-EOF
 
-./main ../../userAccounts.txt ../../items.txt ../../transactions3.txt << EOF
-login
-seller
-advertise
-hat
-20
-3
-logout
-exit
-EOF
+# Otherwise read the stream.input files
+./main ../../userAccounts.txt ../../items.txt ../../week/$1/transactions1.txt < ../../week/$1/stream1.input > ../../week/$1/stream1.output
+./main ../../userAccounts.txt ../../items.txt ../../week/$1/transactions2.txt < ../../week/$1/stream2.input > ../../week/$1/stream2.output
+./main ../../userAccounts.txt ../../items.txt ../../week/$1/transactions3.txt < ../../week/$1/stream3.input > ../../week/$1/stream3.output
 
-cd ../../
+# Concatenate the transaction files into the merged transaction file
+cd ../../week/$1
 
 cat transactions1.txt transactions2.txt transactions3.txt > mergedTransactions.txt
+cp mergedTransactions.txt ../../mergedTransactions.txt # Copy current merged transaction file to root so the backend can take it
 
-cd backend/src
+# Run the backend to update items.txt and userAccounts.txt
+cd ../../backend/src
 
 javac --module-path $PATH_TO_FX --add-modules javafx.controls main.java
 java --module-path $PATH_TO_FX --add-modules javafx.controls main
+
+cd ../../
+
+# Copy the current state of user accounts and items into the current day
+cp userAccounts.txt week/$1/userAccounts.txt
+cp items.txt week/$1/items.txt

@@ -1,18 +1,13 @@
 #!/bin/sh
 
-echo Day 1
-./daily.sh
+# Initialize initial file content in the root
+cp initial/userAccounts.txt userAccounts.txt
+cp initial/items.txt items.txt
 
-echo Day 2
-./daily.sh
-
-echo Day 3
-./daily.sh
-
-echo Day 4
-./daily.sh
-
-echo Day 5
-./daily.sh
-
-echo Week is over
+# Loop through 5 days
+for i in 1 2 3 4 5
+do
+    currentDay="day$i"
+    echo $currentDay
+    ./daily.sh $currentDay
+done
