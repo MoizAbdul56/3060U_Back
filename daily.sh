@@ -10,13 +10,16 @@ cd frontend/src
 
 make
 
-# If its the third day then ask for user input
-
-
-# Otherwise read the stream.input files
-./main ../../userAccounts.txt ../../items.txt ../../week/$1/transactions1.txt < ../../week/$1/stream1.input > ../../week/$1/stream1.output
-./main ../../userAccounts.txt ../../items.txt ../../week/$1/transactions2.txt < ../../week/$1/stream2.input > ../../week/$1/stream2.output
-./main ../../userAccounts.txt ../../items.txt ../../week/$1/transactions3.txt < ../../week/$1/stream3.input > ../../week/$1/stream3.output
+if [ "$1" = "day3" ] # If its the third day then ask for user input
+then
+    ./main ../../userAccounts.txt ../../items.txt ../../week/$1/transactions1.txt
+    ./main ../../userAccounts.txt ../../items.txt ../../week/$1/transactions2.txt
+    ./main ../../userAccounts.txt ../../items.txt ../../week/$1/transactions3.txt
+else # Otherwise read the stream.input files
+    ./main ../../userAccounts.txt ../../items.txt ../../week/$1/transactions1.txt < ../../week/$1/stream1.input > ../../week/$1/stream1.output
+    ./main ../../userAccounts.txt ../../items.txt ../../week/$1/transactions2.txt < ../../week/$1/stream2.input > ../../week/$1/stream2.output
+    ./main ../../userAccounts.txt ../../items.txt ../../week/$1/transactions3.txt < ../../week/$1/stream3.input > ../../week/$1/stream3.output
+fi
 
 # Concatenate the transaction files into the merged transaction file
 cd ../../week/$1
@@ -30,8 +33,8 @@ cd ../../backend/src
 javac --module-path $PATH_TO_FX --add-modules javafx.controls main.java
 java --module-path $PATH_TO_FX --add-modules javafx.controls main
 
+# Copy the current state of user accounts and items into the current day
 cd ../../
 
-# Copy the current state of user accounts and items into the current day
 cp userAccounts.txt week/$1/userAccounts.txt
 cp items.txt week/$1/items.txt
